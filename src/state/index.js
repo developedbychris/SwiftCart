@@ -4,6 +4,8 @@ const initialState = {
     isCartOpen: false,
     cart: [],
     items: [],
+    subtotal: 0,
+    userInfo: {}
 }
 
 export const cartSlice = createSlice({
@@ -22,17 +24,19 @@ export const cartSlice = createSlice({
             } else {
                 state.cart[itemIndex].count += item.count;
             }
-            
+            state.subtotal = state.cart.reduce((total, item) => total + item.price * item.count, 0)
         },
 
         removeFromCart: (state, action) =>{
-            state.cart = state.cart.filter((item) => item.id !== action.payload.id ) //** Return every item that DOESN'T MATCH the Id of the item we pass in (action)
+            state.cart = state.cart.filter((item) => item.id !== action.payload.id ) //** Return every item that DOESN'T MATCH the Id of the item passed in (action)
+            state.subtotal = state.cart.reduce((total, item) => total + item.price * item.count, 0)
         },
 
         increaseCount: (state, action) =>{
             const item = state.cart.find(item => item.id === action.payload.id);
             if (item) {
                 item.count++;
+                state.subtotal = state.cart.reduce((total, item) => total + item.price * item.count, 0)
             }
         },
         
@@ -41,12 +45,18 @@ export const cartSlice = createSlice({
                 if (item.id === action.payload.id && item.count > 1) item.count--
                 return item
             })
+            state.subtotal = state.cart.reduce((total, item) => total + item.price * item.count, 0)
         },
 
         setIsCartOpen : (state) => {
             state.isCartOpen = !state.isCartOpen 
+        },
+        setUserInfo : (state, action) =>{
+            state.userInfo = action.payload
+        },
+        clearCart: (state) =>{
+            state.cart = []
         }
-
     }
 })
 
@@ -58,6 +68,8 @@ export const {
     increaseCount,
     decreaseCount,
     setIsCartOpen,
+    setUserInfo,
+    clearCart,
 } = cartSlice.actions
 
 export default cartSlice.reducer

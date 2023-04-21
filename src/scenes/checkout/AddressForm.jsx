@@ -1,7 +1,18 @@
 import React from 'react'
-import { useMediaQuery, TextField, Box } from "@mui/material"
+import { useMediaQuery, TextField, Box, Select, MenuItem, InputLabel, FormControl, FormHelperText}  from "@mui/material"
 import { getIn } from "formik"
 
+const countries = [
+  "United States",
+  "Canada",
+  "Mexico",
+  "Germany",
+  "France",
+  "United Kingdom",
+  "Italy",
+  "Spain",
+  "Netherlands",
+]
 
 const AddressForm = ({type, values, errors, touched, handleBlur, handleChange}) => {
   const matches = useMediaQuery("(min-width:600px)")
@@ -31,10 +42,20 @@ const AddressForm = ({type, values, errors, touched, handleBlur, handleChange}) 
         error={formattedError("lastName")} helperText={formattedHelper("lastName")} 
         sx={{gridColumn:"span 2"}}/>
         {/* COUNTRY */}
-        <TextField fullWidth type="text" label="Country" onBlur={handleBlur}
-        onChange={handleChange} value={values.country} name={formattedName("country")} 
-        error={formattedError("country")} helperText={formattedHelper("country")} 
-        sx={{gridColumn:"span 4"}}/>
+        <FormControl fullWidth sx={{gridColumn:"span 4"}}>
+          <InputLabel>Country</InputLabel>
+          <Select fullWidth label="Country" onBlur={handleBlur}
+          onChange={handleChange} value={values.country} name={formattedName("country")} 
+          error={formattedError("country")} >
+            {countries.map((country) => (
+              <MenuItem key={country} value={country}>
+                {country}
+              </MenuItem>
+            ))}
+            
+          </Select>
+          {formattedError("country") && <FormHelperText error>required</FormHelperText>}
+        </FormControl>
         {/* STREET 1 */}
         <TextField fullWidth type="text" label="Street Address 1" onBlur={handleBlur}
         onChange={handleChange} value={values.street1} name={formattedName("street1")} 

@@ -7,6 +7,7 @@ import Confirmation from "./scenes/checkout/Confirmation"
 import Navbar from "./scenes/global/Navbar"
 import CartMenu from "./scenes/global/CartMenu"
 import Footer from "./scenes/global/Footer"
+import PaymentForm from "./scenes/checkout/stripe-checkout/PaymentForm.jsx"
 import { Elements } from "@stripe/react-stripe-js"
 import { stripePromise } from "./stripe/stripe"
 
@@ -31,6 +32,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/item/:itemId" element={<ItemDetails />} />
             <Route path="checkout" element={<Checkout />} />
+            <Route path="checkout/payment" element={<PaymentForm />} />
             <Route path="checkout/success" element={<Confirmation />} />
           </Routes>
           <CartMenu />

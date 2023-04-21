@@ -9,7 +9,7 @@ import {shades} from '../../theme'
 import { decreaseCount, increaseCount, removeFromCart, setIsCartOpen } from "../../state";
 import { useNavigate } from "react-router-dom";
 
-const FlexBox = styled(Box)`
+export const FlexBox = styled(Box)`
     display:flex;
     justify-content: space-between;
     align-items: center;
@@ -21,10 +21,7 @@ const CartMenu = () => {
   const dispatch = useDispatch()
   const cart = useSelector((state) => state.cart.cart)
   const isCartOpen = useSelector((state) => state.cart.isCartOpen)
-
-  const totalPrice = cart.reduce((total, item) =>{
-    return total + item?.count * item?.price
-  }, 0)
+  const subtotal = useSelector((state) => state.cart.subtotal)
 
     return (
         <Box display={isCartOpen ? "block" : "none"} backgroundColor="rgba(0,0,0, 0.4)"
@@ -90,7 +87,7 @@ const CartMenu = () => {
                     <Box m="20px 0">
                         <FlexBox m="20px 0">
                             <Typography fontWeight="bold">SUBTOTAL</Typography>
-                            <Typography fontWeight="bold">${totalPrice}</Typography>
+                            <Typography fontWeight="bold">${subtotal}</Typography>
                         </FlexBox>
                         <Button sx={{backgroundColor:shades.primary[400], color:"white", borderRadius:0, minWidth:"100%", padding:"20px 40px", m:"20px 0"}}
                         onClick={()=>{
