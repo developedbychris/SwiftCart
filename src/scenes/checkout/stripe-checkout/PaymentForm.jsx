@@ -33,7 +33,6 @@ const PaymentForm = () => {
     const {
       paymentIntent: { client_secret },
     } = response
-    console.log(client_secret)
 
     const paymentResult = await stripe.confirmCardPayment(client_secret, {
       payment_method: {
@@ -54,10 +53,8 @@ const PaymentForm = () => {
 
     if (paymentResult.error) {
       alert(paymentResult.error.message)
-      console.log(paymentResult.error)
     } else {
       if (paymentResult.paymentIntent.status === "succeeded") {
-        console.log(userInfo)
         dispatch(clearCart([]))
         navigate("/checkout/success")
       }

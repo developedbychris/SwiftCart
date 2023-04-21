@@ -39,7 +39,6 @@ const ItemDetails = () => {
           setItem(itemDoc[0])
           const itemCategory = formattedData.find((doc) => doc?.items?.find((item) => item?.id === Number(itemId))).title
           setCategory(itemCategory)
-          console.log("all items:", allItems)
     } catch (error) {
       console.error(error)
     }
@@ -55,9 +54,6 @@ const ItemDetails = () => {
     dispatch(setItems(formattedData))
   }
 
-  useEffect(()=>{
-    console.log("category:", category)
-  }, [category])
   useEffect(()=>{
     getItem()
     getItems()
