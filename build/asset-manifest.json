@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/static/css/main.6372fe54.css",
+    "main.js": "/static/js/main.ea0b0f98.js",
+    "static/media/chris-ghinda-wK2ESlRRZQ8-unsplash.jpeg": "/static/media/chris-ghinda-wK2ESlRRZQ8-unsplash.af2b3cfddbb3a08b3404.jpeg",
+    "static/media/larm-rmah-R1Ku62Z7zqE-unsplash.jpeg": "/static/media/larm-rmah-R1Ku62Z7zqE-unsplash.3e7ce3adae077f962a41.jpeg",
+    "static/media/brooke-cagle-aVT8VkmzML4-unsplash.jpeg": "/static/media/brooke-cagle-aVT8VkmzML4-unsplash.9f73716b2bcf02ff5b43.jpeg",
+    "static/media/jc-gellidon-JM8TkWJ9UIY-unsplash.jpeg": "/static/media/jc-gellidon-JM8TkWJ9UIY-unsplash.e7d6ddae906b65f91c76.jpeg",
+    "static/media/toa-heftiba-dti56waifB4-unsplash.jpeg": "/static/media/toa-heftiba-dti56waifB4-unsplash.9d675f9f8ff031439819.jpeg",
+    "static/media/swiftcartlogo.png": "/static/media/swiftcartlogo.8a72c63cfe1c91ddb4dc.png",
+    "index.html": "/index.html",
+    "main.6372fe54.css.map": "/static/css/main.6372fe54.css.map",
+    "main.ea0b0f98.js.map": "/static/js/main.ea0b0f98.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6372fe54.css",
+    "static/js/main.ea0b0f98.js"
+  ]
+}
