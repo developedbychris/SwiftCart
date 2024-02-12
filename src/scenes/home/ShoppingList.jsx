@@ -36,7 +36,7 @@ const ShoppingList = () => {
 
   return (
     <Box width="80%" margin="80px auto">
-      <Typography variant="h3" textAlign="left">Our Featured <b>Products</b></Typography>
+      <Typography variant="h3" textAlign="center">Our Featured <b>Products</b></Typography>
       
       <Tabs textColor="primary" indicatorColor="primary" value={value} onChange={handleChange}
        centered TabIndicatorProps={{ sx: {display: matches ? "block": "none"}}}

@@ -5,7 +5,7 @@ const initialState = {
     cart: [],
     items: [],
     subtotal: 0,
-    userInfo: {}
+    n: {}
 }
 
 export const cartSlice = createSlice({
