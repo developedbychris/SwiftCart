@@ -33,7 +33,7 @@ const Checkout = () => {
     }
 
     if(isSecondStep){
-      dispatch(set({...values.billingAddress, email:values.email, phoneNumber: values.phoneNumber, isSameAddress: true}))
+      dispatch(setUserInfo({...values.billingAddress, email:values.email, phoneNumber: values.phoneNumber, isSameAddress: true}))
       navigate("/checkout/payment")
     } 
 
