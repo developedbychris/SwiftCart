@@ -87,7 +87,7 @@ const ItemDetails = () => {
           <Box m="65px 0 25px 0">
             <Typography variant="h3">{item?.name}</Typography>
             <Typography sx={{mt:"5px"}}>${item?.price}</Typography>
-            <Typography sx={{mt:"20px"}}> {item?.longDesc}</Typography>
+            <Typography sx={{mt:"20px"}}> {item?.shortDesc}</Typography>
           </Box>
 
           {/* COUNT & BUTTONS */}

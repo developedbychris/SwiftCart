@@ -22,7 +22,7 @@ const Footer = () => {
                 <Typography mb={mbVal}>Careers</Typography>
                 <Typography mb={mbVal}>Our Stores</Typography>
                 <Typography mb={mbVal}>Terms & Conditions</Typography>
-                <Typography mb={mbVal}>Privary Policy</Typography>
+                <Typography mb={mbVal}>Privacy Policy</Typography>
             </Box>
             <Box>
                 <Typography variant="h4" fontWeight="bold" mb={mbVal}>Customer Care</Typography>
@@ -34,7 +34,7 @@ const Footer = () => {
             <Box width="clamp(25%, 40%, 50%)">
                 <Typography variant="h4" fontWeight="bold" mb={mbVal}>Contact Us</Typography>
                 <Typography mb={mbVal}>123 Main Street Anytown, USA 54321</Typography>
-                <Typography mb={mbVal} sx={{ wordWrap: "break-word" }}> Email: mredwardroh@gmail.com</Typography>
+                <Typography mb={mbVal} sx={{ wordWrap: "break-word" }}> Email: swiftcart@gmail.com</Typography>
                 <Typography mb={mbVal}>(222)333-4444</Typography>
             </Box>
             
